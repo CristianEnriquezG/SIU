@@ -1,0 +1,52 @@
+﻿<Window x:Class="Glorfindel.Login"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Glorfindel"
+        mc:Ignorable="d"
+        Title="Login" Height="500" Width="600" 
+        ResizeMode="NoResize" 
+        WindowStyle="None" 
+        Icon="/favicon.png">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="300"/>
+        </Grid.RowDefinitions>
+
+        <Rectangle Grid.Row="0" Fill="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}"/>
+        <Image Grid.Row="0" x:Name="image" HorizontalAlignment="Left" Height="55" Margin="24,25,0,0" VerticalAlignment="Top" Width="270" Source="/logo-transparente.png"/>
+        <Rectangle Grid.Row="1" Fill="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}"/>
+        <StackPanel Grid.Row="1" Orientation="Horizontal">
+            <FrameworkElement Width="20"/>
+            <Button x:Name="AccesoB" Content="Acceso" Width="200" BorderThickness="0" />
+            <FrameworkElement Width="150"/>
+            <Button x:Name="Salir" Content="Salir" Width="200" BorderThickness="0" Click="Salir_Click"/>
+            <FrameworkElement Width="20"/>
+        </StackPanel>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0">
+                <FrameworkElement Height="30"/>
+                <Label Content="Ingresá tus datos" FontSize="24"/>
+                <TextBlock Text="Usuario" Width="200"/>
+                <FrameworkElement Height="10"/>
+                <TextBox x:Name="UsuarioBox" Width="200"/>
+                <FrameworkElement Height="10"/>
+                <TextBlock Text="Contraseña" Width="200"/>
+                <FrameworkElement Height="10"/>
+                <PasswordBox x:Name="Contraseña" Width="200" />
+                <FrameworkElement Height="30"/>
+                <Button x:Name="Ingresar" Foreground="#FFFFFFFF" Width="50" Height="20" Click="Ingresar_Click" Content="Ingresar" BorderThickness="0" RenderTransformOrigin="0.481,1.093" Background="#FF49AFCD"/>
+            </StackPanel>
+            <StackPanel Grid.Column="1">
+                <FrameworkElement Height="135"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

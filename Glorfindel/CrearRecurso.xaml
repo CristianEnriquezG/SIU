@@ -1,0 +1,54 @@
+﻿<Page x:Class="Glorfindel.CrearRecurso"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Glorfindel"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="1365"
+      Background="#f2f2f2"
+      Title="CrearRecurso">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="60*"/>
+            <RowDefinition Height="10*"/>
+        </Grid.RowDefinitions>
+        <Rectangle Fill="Azure" Grid.Row="1" Height="400" Margin="0,0,0,50"/>
+        <Label Grid.Row="0" Content="Crear Recurso Academico" FontSize="40" HorizontalAlignment="Center"/>
+        <StackPanel Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button x:Name="CrearR" Content="Crear Recurso" BorderThickness="0" Click="CrearR_Click" Width="200" Height="40"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="1" VerticalAlignment="Top">
+            <Label Content="Codigo de Materia" FontSize="28"/>
+            <FrameworkElement Width="50"/>
+            <TextBox x:Name="CodmateriaBox" Width="200" Height="40" Text="Codigo de la materia" VerticalContentAlignment="Center" HorizontalContentAlignment="center"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Width="1000" Height="40"  Grid.Row="1" Margin="10,47,355,363">
+            <Label Content="Tipo de Recurso Academico" FontSize="28"/>
+            <FrameworkElement Width="50"/>
+            <RadioButton x:Name="Trabajo_Practico" Content="Trabajo Practico" FontSize="24" VerticalContentAlignment="Center"/>
+            <FrameworkElement Width="50"/>
+            <RadioButton x:Name="Parcial" Content="Parcial" FontSize="24" VerticalContentAlignment="Center"/>
+            <FrameworkElement Width="50"/>
+            <RadioButton x:Name="Taller" Content="Taller" FontSize="24" VerticalContentAlignment="Center"/>
+            <FrameworkElement Width="50"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="1" Width="1000" Height="50" Margin="10,124,355,276" >
+
+            <Label Content="Tipo de Calificación" FontSize="30" Width="300" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Center" />
+            <FrameworkElement Width="50"/>
+            <RadioButton x:Name="Cualitativo" Content="Cualitativo" FontSize="24" Width="200" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center"/>
+            <FrameworkElement Width="50"/>
+            <RadioButton x:Name="Quantitativo" Content="Quantitativo" FontSize="24" Width="200" VerticalContentAlignment="Center"/>
+        </StackPanel>
+        <Label Content="Nombre del Recurso" FontSize="30" Width="300" Height="45" Grid.Row="1" Margin="38,225,1027,180"/>
+        <Label Content="Fecha" FontSize="30" Width="300" Height="45" Grid.Row="1" Margin="524,225,541,180"/>
+        <TextBox x:Name="NombreRecurso" Width="300" Height="40" Text="Nombre" Grid.Row="1" Margin="38,297,1027,113" VerticalContentAlignment="Center"/>
+        <DatePicker x:Name="datePicker" HorizontalAlignment="Left" Height="45" Margin="524,292,0,0" Grid.Row="1" VerticalAlignment="Top" Width="300" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch"/>
+
+
+    </Grid>
+</Page>

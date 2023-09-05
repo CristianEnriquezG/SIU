@@ -1,0 +1,125 @@
+﻿<Page x:Class="Glorfindel.ModificarRecurso"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Glorfindel"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="1365"
+      Background="#f2f2f2"
+      Title="ModificarRecurso">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60*"/>
+            <RowDefinition Height="480*"/>
+            <RowDefinition Height="60*"/>
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" Content="Recursos Academicos Existentes" FontSize="40" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Grid x:Name="interna" Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50*"/>
+                <ColumnDefinition Width="50*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50*"/>
+                <RowDefinition Height="50*"/>
+            </Grid.RowDefinitions>
+            <DataGrid x:Name="VistaDatos" 
+                  Grid.RowSpan="2"
+                  Grid.Column="0"
+                  IsReadOnly="True"
+                  HorizontalContentAlignment="Stretch" 
+                  VerticalContentAlignment="Stretch" 
+                  HorizontalAlignment="Stretch"
+                  IsManipulationEnabled="False"
+                  ItemsSource="{Binding}"
+            />
+            <GroupBox x:Name="ModificarGroupBox" 
+                      Grid.Column="1" 
+                      HorizontalAlignment="Center" 
+                      BorderThickness="3" 
+                      Height="230" 
+                      VerticalAlignment="Center" 
+                      Width="600" 
+                      IsEnabled="False">
+                <GroupBox.Header>
+                    <TextBlock Text="Modificar" VerticalAlignment="Center" TextAlignment="Center" FontSize="30" />
+                </GroupBox.Header>
+                <GroupBox.Content>
+                    <StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Width="200" FontSize="20"><Run Text="Nombre de"/><Run Language="es-ar" Text="l recurso"/></TextBlock>
+                        </StackPanel>
+                        <FrameworkElement Height="5"/>
+                        <TextBlock x:Name="NombreActual" HorizontalAlignment="Left" Text="{Binding ElementName=VistaDatos, Path=SelectedItem.nombre}" FontSize="16"/>
+                        <TextBlock Text="Fecha" Width="200" HorizontalAlignment="Left" FontSize="20"/>
+                        <DatePicker x:Name="FechaPicker" Text="{Binding ElementName=VistaDatos, Path=SelectedItem.Fecha}" />
+                        <Button x:Name="GuardarCambios"  Click="GuardarCambios_Click" BorderThickness="0" Background="LightGreen">
+                            <Button.Content>
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="/Save.png" Width="24"/>
+                                    <FrameworkElement Width="20"/>
+                                    <TextBlock Text="Guardar" />
+                                </StackPanel>
+                            </Button.Content>
+                        </Button>
+                    </StackPanel>
+                </GroupBox.Content>
+            </GroupBox>
+            <GroupBox 
+                x:Name="EliminarGroupBox" 
+                Grid.Row="1" 
+                Grid.Column="1" 
+                HorizontalAlignment="Center" 
+                BorderThickness="3" 
+                Height="230" 
+                VerticalAlignment="Center" 
+                Width="600" 
+                IsEnabled="False">
+                <GroupBox.Header>
+                    <TextBlock Text="Eliminar" VerticalAlignment="Center" TextAlignment="Center" FontSize="30" />
+                </GroupBox.Header>
+                <GroupBox.Content>
+                    <StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Width="200" FontSize="20"><Run Text="Nombre de"/><Run Text="l recurso"/></TextBlock>
+                        </StackPanel>
+                        <FrameworkElement Height="5"/>
+                        <TextBlock x:Name="NombreActualEliminar" HorizontalAlignment="Left" Text="{Binding ElementName=VistaDatos, Path=SelectedItem.nombre}" FontSize="16"/>
+                        <TextBlock Text="Tipo" Width="200" HorizontalAlignment="Left" FontSize="20"/>
+                        <TextBlock Text="{Binding ElementName=VistaDatos, Path=SelectedItem.Tipo}" Width="200" HorizontalAlignment="Left" FontSize="20"/>
+                        <TextBlock Text="Fecha" Width="200" HorizontalAlignment="Left" FontSize="20"/>
+                        <TextBlock Text="{Binding ElementName=VistaDatos, Path=SelectedItem.Fecha}" Width="200" HorizontalAlignment="Left" FontSize="20"/>
+                        <Button x:Name="Eliminar"  Click="Eliminar_Click" BorderThickness="0" Background="Red">
+
+                            <Button.Content>
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="/delete.png" Width="24"/>
+                                    <FrameworkElement Width="20"/>
+                                    <TextBlock Text="Eliminar" Foreground="White"/>
+                                </StackPanel>
+                            </Button.Content>
+                        </Button>
+                    </StackPanel>
+                </GroupBox.Content>
+            </GroupBox>
+
+        </Grid>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button x:Name="BotonEliminarRecurso" Content="Eliminar Recurso" Width="200" Height="40" 
+                Click="EliminarRecurso_Click"                
+                BorderThickness="0"
+                Background="#49afcd"                  
+                Foreground="#FFFFFFFF"/>
+            <FrameworkElement Width="50"/>
+            <Button x:Name="BotonModificarRecurso" Content="Modificar Recurso" Width="200" Height="40"
+                BorderThickness="0"
+                Background="#49afcd"                  
+                Foreground="#FFFFFFFF"
+                Click="ModificarRecurso_Click"
+                    />
+        </StackPanel>
+    </Grid>
+</Page>

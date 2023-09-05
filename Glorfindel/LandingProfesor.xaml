@@ -1,0 +1,33 @@
+﻿<Page x:Class="Glorfindel.LandingProfesor"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Glorfindel"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="800"
+      Title="LandingProfesor"
+      Background="#f2f2f2">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="569"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+
+        </Grid.ColumnDefinitions>
+        <Label x:Name="labelBienvenido" Grid.Row="0" Content="Bienvenido Alumno" FontSize="24" FontFamily="Helvetica Neue" Foreground="#FF0088CC" Grid.ColumnSpan="2" Margin="0,10,266,549" Grid.RowSpan="2"/>
+        <Label Grid.Row="1" Content="Períodos Lectivo" FontSize="18" FontFamily="Helvetica Neue" Margin="10,10,10,517"/>
+        <Label Grid.Row="1" Content="FE-1º CUATRIMESTRE" FontSize="14" FontFamily="Helvetica Neue" Margin="0,135,266,408" Grid.ColumnSpan="2"/>
+        <Label Grid.Row="1" Grid.Column="0" Content="FE-ANUAL" FontSize="14" FontFamily="Helvetica Neue" Grid.ColumnSpan="2" Margin="0,271,266,272"/>
+        <Label Grid.Row="1" Grid.Column="0" Content="Turnos de Examen" FontSize="24" FontFamily="Helvetica Neue" Margin="0,363,266,164" Grid.ColumnSpan="2"/>
+        <Label Grid.Row="1" Grid.Column="0" Content="FE-JUL-AGO-1ºLLAMADO" FontSize="14" FontFamily="Helvetica Neue" Margin="0,409,266,134" Grid.ColumnSpan="2"/>
+        <Label Grid.Row="1" Grid.Column="1" Content="Encuestas Pendientes" FontSize="18" FontFamily="Helvetica Neue" Margin="10,10,10,517"/>
+
+        <Rectangle Grid.Row="1" Grid.Column="1" Fill="#FCF8E3" Margin="0,50,146,477"/>
+        <Label Grid.Row="1" Grid.Column="1" Content="No hay encuestas pendientes para completar" Margin="0,52,0,475"/>
+    </Grid>
+</Page>

@@ -1,0 +1,47 @@
+﻿<Window x:Name="Guarani" x:Class="Glorfindel.HomeProfesor"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Glorfindel"
+      mc:Ignorable="d" 
+      d:DesignHeight="720" d:DesignWidth="1280"
+      Title="HomeProfesor"
+        WindowStyle="none"
+      Background="#fff" Icon="/favicon.png">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="150*"/>
+            <RowDefinition Height="40*"/>
+            <RowDefinition Height="600"/>
+        </Grid.RowDefinitions>
+        <Rectangle Grid.Row="0" Fill="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}"/>
+        <Image Grid.Row="0" x:Name="image" HorizontalAlignment="Left" Height="55" Margin="24,25,0,0" VerticalAlignment="Top" Width="270" Source="/logo-transparente.png"/>
+        <Rectangle Grid.Row="1" Fill="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}"/>
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Height="30">
+            <FrameworkElement Width="50"/>
+            <ComboBox x:Name="RecursoAcademico" BorderThickness="0" SelectionChanged="RecursoAcademico_SelectionChanged">
+                <ComboBoxItem Content="Recursos Academicos" IsSelected="True"/>
+                <ComboBoxItem Content="Crear Recurso Academico"/>
+                <ComboBoxItem Content="Recursos Academico Existente"/>
+                <ComboBoxItem Content="Calificar Recurso Academico"/>
+            </ComboBox>
+            <FrameworkElement Width="25"/>
+            <ComboBox x:Name="Informes" BorderThickness="0" SelectionChanged="Informes_SelectionChanged" >
+                <ComboBoxItem Content="Informes" IsSelected="True"/>
+                <ComboBoxItem Content="Informe Por Curso"/>
+                <ComboBoxItem Content="Informe por Alumno"/>
+            </ComboBox>
+            <FrameworkElement Width="50"/>
+            <Button x:Name="Boton_Salir" Content="Salir" Click="Boton_Salir_Click" BorderThickness="0" Width="200"/>
+            <FrameworkElement Width="600"/>
+            <ComboBox x:Name="Perfil" Width="110" BorderThickness="0" VerticalContentAlignment="Center" >
+                <ComboBoxItem Content="Perfil: Docente" IsSelected="True"/>
+            </ComboBox>
+        </StackPanel>
+        <Image x:Name="image2" HorizontalAlignment="Left" Height="24" Margin="950,19,0,0" VerticalAlignment="Top" Width="24" Source="/envelope.png" RenderTransformOrigin="0.5,0.542"/>
+        <ComboBoxItem x:Name="Nombre" Content="Alumno" FontSize="24" IsSelected="True" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="997,15,0,0"/>
+        <Frame x:Name="ProfesorFrame" Grid.Row="2" NavigationUIVisibility="Hidden" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+    </Grid>
+</Window>

@@ -1,0 +1,51 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="delete.png" />
+    <None Remove="envelope.png" />
+    <None Remove="favicon.png" />
+    <None Remove="logo-transparente.png" />
+    <None Remove="Save.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Extended.Wpf.Toolkit" Version="4.5.0" />
+    <PackageReference Include="MySqlConnector" Version="2.2.6" />
+    <PackageReference Include="OxyPlot.Core" Version="2.1.2" />
+    <PackageReference Include="OxyPlot.Wpf" Version="2.1.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="delete.png" />
+    <Resource Include="envelope.png" />
+    <Resource Include="favicon.png" />
+    <Resource Include="logo-transparente.png" />
+    <Resource Include="Save.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="LandingProfesor.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>
